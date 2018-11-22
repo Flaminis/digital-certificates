@@ -1,0 +1,33 @@
+{% extends "partials/base.nj" %}
+{% import "./chunks/flash.nj" as flash %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm col-md-8 offset-md-2">
+      <h1>Изъять диплом из сети</h1>
+      <p>
+        Загрузите PDF файл диплома
+      </p>
+      {{ flash.message(flashMessage) }}
+      <form action="/diploma-remove" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="diploma-file" name="diploma-file">
+              <label class="custom-file-label" for="diploma-file">Выбирите файл</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Пароль *</label>
+          <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">Изъять</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

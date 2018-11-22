@@ -1,0 +1,13 @@
+{% macro message(message) %}
+  {% if message %}
+  <div class="alert alert-{{message.type}}" role="{{message.type}}">
+    
+    {% if(message.message) %}
+    <h4 class="alert-heading">{{message.title}}</h4>
+    <p>{{message.message | safe}}</p>
+    {% else %}
+    <div class="alert-heading">{{message.title}}</div>
+    {% endif %}
+  </div>
+  {% endif %}
+{% endmacro %}

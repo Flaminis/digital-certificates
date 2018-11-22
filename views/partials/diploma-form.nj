@@ -1,0 +1,25 @@
+
+<nav>
+  <ul class="nav nav-tabs" id="form-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="file-tab" data-toggle="tab" href="#file" role="tab" aria-controls="file" aria-selected="true">Файл</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="hash-tab" data-toggle="tab" href="#hash" role="tab" aria-controls="hash" aria-selected="false">Хэш</a>
+    </li>
+  </ul>
+</nav>
+<div class="tab-content" id="form-tabs-content">
+  <div class="tab-pane fade show active" id="file" role="tabpanel" aria-labelledby="file-tab">
+  </div>
+  <div class="tab-pane fade" id="hash" role="tabpanel" aria-labelledby="hash-tab">
+    <form action="/check" method="get">
+      <div class="form-group">
+        <input type="text" name="hash" class="form-control">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Проверить</button>
+      </div>
+    </form>
+  </div>
+</div>

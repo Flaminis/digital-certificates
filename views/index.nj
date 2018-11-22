@@ -1,0 +1,33 @@
+{% extends "partials/base.nj" %}
+{% import "./chunks/flash.nj" as flash %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm col-md-8 offset-md-2">
+      <h1>Проект «Цифровой диплом»</h1>
+      <p class="lead">
+        Каждый выданный нами диплом сохранен в блокчейн сети Etherium. 
+        Это гарантирует что документ верифицирован.
+      </p>
+      <p>
+        Загрузите PDF файл диплома, или воспользуйтесь его хешем в <code>SHA-256</code>.
+      </p>
+      {{ flash.message(flashMessage) }}
+      <form action="/check" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="diploma-file" name="diploma-file">
+              <label class="custom-file-label" for="diploma-file">Выбирите файл</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">Проверить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
